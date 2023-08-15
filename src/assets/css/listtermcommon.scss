@@ -1,0 +1,45 @@
+@import "../color";
+@import "../mixins";
+
+.container-list_term {
+  cursor: default;
+  .row {
+    padding :30px;
+    justify-content: space-between;
+    &  > .column:not(:last-child)   {
+    
+        border-right: 1.5px solid rgba(255,255,255,0.3);
+    }
+    .column {
+      & >  p.typoEntire:first-child {
+        margin-bottom: 20px;
+      }
+      ul {
+        list-style-type: none;
+        padding : 0;
+        margin : 0;
+        li:not(:last-child) {
+          margin-bottom: 10px;
+        }
+        li {
+          display: flex;
+          justify-content: flex-start;
+          align-items: baseline;
+          span:first-child {
+            margin-right: 5px;
+            line-height: 1;
+          }
+          p.text-medium{
+            font-size: 16px;
+            font-weight: 400;
+            margin: unset;
+          }
+          & > span >  svg {
+           color:rgba(255,255,255,0.3);
+           font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}

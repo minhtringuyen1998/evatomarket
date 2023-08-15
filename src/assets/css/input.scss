@@ -1,0 +1,45 @@
+@import "../color";
+
+.inputEntire {
+  display: flex;
+  min-width: 420px;
+  padding :15px 25px;
+  border-radius: 100px;
+  font-size: 1rem;
+  position: relative;
+  & > input {
+    background: transparent;
+    border: unset;
+    outline: unset;
+    color : inherit;
+    width: 100%;
+    font-size: inherit;
+    max-width: 360px;
+    &::placeholder {
+      color: $primary-text;
+    }
+  }
+  & > .iconWrapper {
+    cursor: pointer;
+    position: absolute;
+    right:5px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $btn-hover-darkColor;
+    border-radius: 50%;
+    top : 50%;
+    padding :5px;
+    transform: translateY(-50%);
+    & > svg {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.light-input {
+  background-color:rgba(255,255,255,0.15) ;
+  color: $primary-text;
+}

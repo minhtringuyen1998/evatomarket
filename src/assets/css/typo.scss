@@ -1,0 +1,30 @@
+@import "../color";
+.typoEntire {
+  font-family: "Poppins" , sans-serif ;
+  font-weight: 700;
+  transition: all .3s ease-in-out;
+  line-height: 1;
+  margin: unset;
+}
+ @each $key, $val in $colors {
+  .#{$key}-text {
+    color : $val;
+  
+  }
+
+    .#{$key}-text-hover {
+      cursor: pointer;
+      &:hover {
+         color: $green-btn;
+      }
+    }
+ }
+ @each $key,$val in $sizes {
+  .text-#{$key} {
+    font-size: $val;
+    line-height: 1;
+  }
+ }
+ .remove-transition {
+  transition: none;
+ }

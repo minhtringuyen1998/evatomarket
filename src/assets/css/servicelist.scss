@@ -1,0 +1,46 @@
+@import "../color";
+@import "../mixins";
+$border :  1.5px solid rgba(167,167,167,.2);
+.container_services {
+  cursor: default;
+  .row {
+    padding :30px;
+    justify-content: space-between;
+    
+    .service_item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      border: $border;
+      border-radius: 8px;
+      padding : 30px;
+      flex-basis: calc(100% / 5.5);
+      transition: all  .3s ease-in-out;
+      &:hover {
+        cursor: pointer;
+        border-color:$green-btn ;
+        .img_container {
+          img {
+            transform: rotate3d(0 , 1, 0, 360deg);
+          }
+        }
+      }
+      .img_container {
+        width: 97px;
+        height: 88px;
+        margin-bottom: 40px;
+        img {
+          transition: all .3s ease-in-out;
+        }
+      }
+      .content {
+        margin : 0 auto;
+        .text-x-large {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}

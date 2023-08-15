@@ -1,0 +1,42 @@
+@import "../color";
+.container-img-lazy-load {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  min-height: 100%;
+  .lazy {
+    display: none;
+  }
+  .lazy + .spinner {
+    display: inline-block;
+  }
+
+  .lazy_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+  }
+  @keyframes rotateSpinner {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .spinner {
+    display: none;
+    border: 2px solid $secondary-text;
+    border-top: 2px solid #767676;
+    min-width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    animation-name: rotateSpinner  ;
+    animation-timing-function:linear;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+  }
+
+}
