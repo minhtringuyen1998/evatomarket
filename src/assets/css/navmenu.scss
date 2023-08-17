@@ -3,8 +3,8 @@
 @import "../font";
 
 nav {
-  width: 1280px;
-  margin :0 auto;
+  max-width: 1440px;
+  margin : 0 auto;
   position: relative;
   top: -36px;
   .block_menu {
@@ -12,6 +12,7 @@ nav {
     border-radius: 100px;
     padding : 10px;
     .row {
+      row-gap: 20px;
       .nav-menu_item {
         &:hover 
         {
@@ -81,10 +82,11 @@ nav {
           position: absolute;
           top : 100%;
           border-radius: 8px;
-          width: 1280px;
-          left: -440px;
+          width: 1310px;
+          left: -425px;
           background-color: #122d40;
           display: none;
+          z-index: 2;
         }
         .quick_find_dropdown {
           display: none;
@@ -93,12 +95,20 @@ nav {
           border-radius: 8px;
           background-color: #122d40;
           width: 630px;
+          z-index: 2;
         }
       }
       .button_daily {
         margin : 0;
         height: 58px;
+        display: flex;
+        justify-content: flex-end;
       }
     }
+  }
+}
+@include mobile {
+  nav {
+    display: none;
   }
 }

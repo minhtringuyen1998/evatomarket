@@ -4,9 +4,9 @@ $border :  1.5px solid rgba(167,167,167,.2);
 .container_services {
   cursor: default;
   .row {
-    padding :30px;
-    justify-content: space-between;
-    
+    padding :30px 0;
+    justify-content: space-evenly;
+    row-gap: 20px;
     .service_item {
       display: flex;
       justify-content: center;
@@ -16,7 +16,6 @@ $border :  1.5px solid rgba(167,167,167,.2);
       border: $border;
       border-radius: 8px;
       padding : 30px;
-      flex-basis: calc(100% / 5.5);
       transition: all  .3s ease-in-out;
       &:hover {
         cursor: pointer;
@@ -37,6 +36,9 @@ $border :  1.5px solid rgba(167,167,167,.2);
       }
       .content {
         margin : 0 auto;
+        p:first-child{
+          margin-bottom: 10px;
+        }
         .text-x-large {
           font-size: 25px;
         }

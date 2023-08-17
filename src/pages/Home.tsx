@@ -1,41 +1,35 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Header from "../layouts/Header";
-import { useEffect, useState } from "react";
 import NavMenu from "../layouts/NavMenu";
-
+import BannerHomePage from "../layouts/BannerHome";
+import "../assets/css/homepage.scss";
+import Services from "../layouts/Services";
+import AdvertisementHome from "../layouts/Advertisement";
+import SectionSpacing from "../layouts/SectionSpacing";
+import CategoriesHome from "../layouts/CategoriesHome";
+import ProductListHome from "../layouts/ProductListHome";
 const HomePage = (props: any) => {
-  const [showMenu, setShowMenu] = useState(false);
-  const lazyLoad = () => {
-    const listImg = document.querySelectorAll("img.lazy_img");
-    if (listImg.length) {
-      listImg.forEach((img: any) => {
-        if (img.src) {
-          return;
-        } else {
-          setTimeout(() => {
-            let scrollTop = window.pageYOffset;
-            if (img.offsetTop < window.innerHeight - scrollTop) {
-              img.classList.remove("lazy");
-              img.src = img.dataset.src;
-            }
-          }, 500);
-        }
-      });
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", lazyLoad);
-    window.addEventListener("load", lazyLoad);
-    return () => {
-      window.removeEventListener("scroll", lazyLoad);
-      window.addEventListener("load", lazyLoad);
-    };
-  }, []);
+  const location = useLocation();
+
   return (
     <>
       <Header />
       <NavMenu />
-      <Outlet />
+      <section className="container_homepage">
+        {location.pathname === "/" ? (
+          <>
+            <BannerHomePage />
+            <Services />
+            <AdvertisementHome />
+            <SectionSpacing />
+            <CategoriesHome />
+            <SectionSpacing />
+            <ProductListHome />
+          </>
+        ) : (
+          <Outlet />
+        )}
+      </section>
     </>
   );
 };

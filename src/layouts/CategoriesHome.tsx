@@ -1,79 +1,79 @@
 import { Container, Row, Col } from "react-bootstrap";
+import "../assets/css/categorieshome.scss";
+import ImageLoading from "../components/ImageLazy";
 import Text from "../components/Typo";
 import { SIZE, VARIANTS } from "../interfaces/components";
-import ImageLoading from "../components/ImageLazy";
-import "../assets/css/servicelist.scss";
-const ServiceList = (props: any) => {
+const CategoriesHome = () => {
   return (
-    <Container fluid="lg" className="container_services">
-      <Row>
-        <Col xs={12} sm={12} md={5} lg={2} className="service_item">
+    <Container as="section" className="container-categories_home">
+      <h2>
+        Discover Our {""}
+        <span>Categories</span>
+      </h2>
+      <Row fluid="xs">
+        <Col xs={12} sm={5} lg xl className="service_item">
           <div className="img_container">
             <ImageLoading dataSrc="https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/s1.png" />
           </div>
           <div className="content">
-            <Text type={VARIANTS.PRIMARY} size={SIZE.XLARGE}>
+            <Text type={VARIANTS.DARK} size={SIZE.MEDIUM}>
               {" "}
               Fishes &amp; Raw Meats{" "}
             </Text>
-            <Text type={VARIANTS.SUCCESS} size={SIZE.MEDIUM}>
-              20% OFF
-            </Text>
           </div>
         </Col>
-        <Col xs={12} sm={12} md={5} lg={2} className="service_item">
+        <Col xs={12} sm={5} lg xl className="service_item">
           <div className="img_container">
             <ImageLoading dataSrc="https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/s2.png" />
           </div>
           <div className="content">
-            <Text type={VARIANTS.PRIMARY} size={SIZE.XLARGE}>
+            <Text type={VARIANTS.DARK} size={SIZE.MEDIUM}>
               {" "}
               Fruits &amp; Vegetables{" "}
             </Text>
-            <Text type={VARIANTS.SUCCESS} size={SIZE.MEDIUM}>
-              20% OFF
-            </Text>
           </div>
         </Col>
-        <Col xs={12} sm={12} md={5} lg={2} className="service_item">
+        <Col xs={12} sm={5} lg xl className="service_item">
           <div className="img_container">
             <ImageLoading dataSrc="https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/s3.png" />
           </div>
           <div className="content">
-            <Text type={VARIANTS.PRIMARY} size={SIZE.XLARGE}>
+            <Text type={VARIANTS.DARK} size={SIZE.MEDIUM}>
               {" "}
               Breads &amp; Sweats{" "}
             </Text>
-            <Text type={VARIANTS.SUCCESS} size={SIZE.MEDIUM}>
-              50% OFF
-            </Text>
           </div>
         </Col>
-        <Col xs={12} sm={12} md={5} lg={2} className="service_item">
+        <Col xs={12} sm={5} lg xl className="service_item">
           <div className="img_container">
             <ImageLoading dataSrc="https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/s4.png" />
           </div>
           <div className="content">
-            <Text type={VARIANTS.PRIMARY} size={SIZE.XLARGE}>
+            <Text type={VARIANTS.DARK} size={SIZE.MEDIUM}>
               {" "}
               Milk &amp; Proteins{" "}
             </Text>
-            <Text type={VARIANTS.SUCCESS} size={SIZE.MEDIUM}>
-              40% OFF
-            </Text>
           </div>
         </Col>
-        <Col xs={12} sm={12} md={5} lg={2} className="service_item">
+        <Col xs={12} sm={5} lg xl className="service_item">
           <div className="img_container">
             <ImageLoading dataSrc="https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/s6.png" />
           </div>
           <div className="content">
-            <Text type={VARIANTS.PRIMARY} size={SIZE.XLARGE}>
+            <Text type={VARIANTS.DARK} size={SIZE.MEDIUM}>
               {" "}
               Ready touse Foods
             </Text>
-            <Text type={VARIANTS.SUCCESS} size={SIZE.MEDIUM}>
-              45% OFF
+          </div>
+        </Col>
+        <Col xs={12} sm={5} lg xl className="service_item">
+          <div className="img_container">
+            <ImageLoading dataSrc="https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/s5.png" />
+          </div>
+          <div className="content">
+            <Text type={VARIANTS.DARK} size={SIZE.MEDIUM}>
+              {" "}
+              Cleaning Materials
             </Text>
           </div>
         </Col>
@@ -81,5 +81,4 @@ const ServiceList = (props: any) => {
     </Container>
   );
 };
-
-export default ServiceList;
+export default CategoriesHome;

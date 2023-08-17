@@ -1,4 +1,4 @@
-import { ChangeEvent, ChangeEventHandler, ReactNode, ReactSVGElement } from "react"
+import { ReactNode } from "react"
 export interface ITypoProps {
   hoverEffect? : boolean,
   onClick? :() => void,
@@ -13,7 +13,8 @@ export interface IButtonProps {
   onClick? : (...args : any[]) => void,
   load?: boolean | number,
   icon? : ReactNode,
-  iconPosition? : 'left' | 'right'
+  iconPosition? : 'left' | 'right',
+  classes? : string
 }
 export interface IInputProps {
   type : VARIANTS,
@@ -35,15 +36,17 @@ export interface IImageLazyLoad {
 export enum SIZE {
   SMALL  = "small", 
   MEDIUM =  "medium",
-  LARGE="large",
+  LARGE = "large",
   XLARGE = "x-large",
   ERROR= "error"
 }
 export enum VARIANTS {
   PRIMARY = "primary",
   SECONDARY = "secondary",
+  SECONDARY_OUTLINE = "secondary-outline",
   LINK = "link",
   SUCCESS ="success",
   DARK= "dark",
-  LIGHT = "light"
+  LIGHT = "light",
+  OUTLINE ="outline"
 }

@@ -6,15 +6,14 @@ import { SIZE, VARIANTS } from "../interfaces/components";
 import { CiPercent } from "react-icons/ci";
 import Button from "../components/Button";
 import { AiFillGift, AiFillCaretDown } from "react-icons/ai";
-import ImageLoading from "../components/ImageLazy";
 import ServiceList from "../modules/ServiceList";
 import ListTermCommon from "../modules/ListTermCommon";
 const NavMenu = () => {
   return (
     <nav>
-      <Container fluid className="block_menu">
+      <Container className="block_menu">
         <Row>
-          <Col className="nav-menu_item">
+          <Col className="nav-menu_item" xs={12} sm="auto">
             <NavLink to="#" className="menu_item">
               <span className="icon-basket"></span>
               <Text size={SIZE.MEDIUM} type={VARIANTS.PRIMARY}>
@@ -22,7 +21,7 @@ const NavMenu = () => {
               </Text>
             </NavLink>
           </Col>
-          <Col className="nav-menu_item" xl="auto">
+          <Col className="nav-menu_item" xs={12} sm="auto">
             <NavLink to="#" className="menu_item">
               <Text size={SIZE.MEDIUM} type={VARIANTS.PRIMARY}>
                 Best Sales
@@ -30,7 +29,7 @@ const NavMenu = () => {
               <span className="hot_badge">Hot</span>
             </NavLink>
           </Col>
-          <Col className="nav-menu_item" xl="auto">
+          <Col className="nav-menu_item" xs={12} sm="auto">
             <NavLink to="#" className="menu_item">
               <CiPercent size={25} />
               <Text size={SIZE.MEDIUM} type={VARIANTS.PRIMARY}>
@@ -44,7 +43,7 @@ const NavMenu = () => {
               </div>
             </NavLink>
           </Col>
-          <Col className="nav-menu_item" xl="auto">
+          <Col className="nav-menu_item" xs={12} sm="auto">
             <NavLink to="#" className="menu_item">
               <Text size={SIZE.MEDIUM} type={VARIANTS.PRIMARY}>
                 Quick Find
@@ -57,21 +56,21 @@ const NavMenu = () => {
               </div>
             </NavLink>
           </Col>
-          <Col className="nav-menu_item" xl="auto">
+          <Col className="nav-menu_item" xs={12} sm="auto">
             <NavLink to="#" className="menu_item">
               <Text size={SIZE.MEDIUM} type={VARIANTS.PRIMARY}>
                 New
               </Text>
             </NavLink>
           </Col>
-          <Col className="nav-menu_item" xl="auto">
+          <Col className="nav-menu_item" xs={12} sm="auto">
             <NavLink to="#" className="menu_item">
               <Text size={SIZE.MEDIUM} type={VARIANTS.PRIMARY}>
                 Contact
               </Text>
             </NavLink>
           </Col>
-          <Col className="nav-menu_item button_daily">
+          <Col className="nav-menu_item button_daily" xs={12} lg sm="auto">
             <Button type={VARIANTS.PRIMARY} icon={<AiFillGift />}>
               Daily Offer
             </Button>

@@ -125,6 +125,9 @@ header#header-container {
   header#header-container {
     padding : 10px 0;
     .content {
+      .line {
+        display: none;
+      }
       margin-top: unset;
       .header_left {
         .img_container {

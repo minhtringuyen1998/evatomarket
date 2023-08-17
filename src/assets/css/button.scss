@@ -1,7 +1,6 @@
 @import "../color";
 .btn-container {
   max-width: 100%;
-  height: 100%;
   .buttonEntire {
     border: unset;
     outline: unset;
@@ -11,13 +10,12 @@
     height: 100%;
     cursor: pointer;
     width: fit-content;
-    margin : 0 auto;
+    border-radius: 50px;
+    padding :15px 30px;
   }
   .primary-button {
     background-color: $green-btn;
     color : $black;
-    border-radius: 50px;
-    padding :15px 30px;
     font-size: $font-size--medium;
     font-weight: unset;
     & > span:first-child  {
@@ -38,7 +36,30 @@
     justify-content: center;
     align-items: center;
     gap : 10px;
+    flex-direction: row-reverse;
+    span {
+      line-height: 1;
+    }
   }
+  [class^="secondary-"], [class*=" secondary-"] {
+    background-color:$btn-hover-darkColor;
+    color :$secondary;
+    font-weight: bold;
+    font-size: $font-size--medium;
+    &:hover {
+      background-color: $green-btn;
+      color : $btn-hover-darkColor;
+    }
+  }
+  [class^="secondary-outline"], [class*="secondary-outline"] {
+    background-color: transparent;
+    border: 1px solid $btn-hover-darkColor;
+    color : $btn-hover-darkColor;
+    &:hover {
+      border: 1px solid $green-btn;
+    }
+  }
+
 
   .btn-loading  {
     padding : 15px 50px 15px 30px;

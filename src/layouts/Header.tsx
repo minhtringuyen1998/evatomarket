@@ -29,9 +29,9 @@ const Header = () => {
           <Col className="header_left" xs={7}>
             <div className="img_container">
               <ImageLoading dataSrc="https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/04/logo-sm.png" />
-            </div>
-            <div className="line">
-              <div className="header_line_2">&nbsp;</div>
+              <div className="line">
+                <div className="header_line_2">&nbsp;</div>
+              </div>
             </div>
             <div className="input-search_container">
               <InputComponent
@@ -71,6 +71,7 @@ const Header = () => {
             <div className="icon_wrapper icon-heart">
               <FiHeart className="icon" />
             </div>
+
             <div className="icon_wrapper  icon-menu">
               <AiOutlineMenu className="icon" />
             </div>

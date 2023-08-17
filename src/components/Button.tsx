@@ -4,7 +4,7 @@ import { AiOutlineLoading, AiOutlineCheck } from "react-icons/ai";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 const Button = (props: IButtonProps) => {
-  const { onClick = () => {}, children, type, icon, load } = props;
+  const { onClick = () => {}, children, type, icon, load, classes } = props;
   const [loading, setLoading] = useState<boolean>(false);
   const handleOnClickBtn = () => {
     if (typeof load == "number") {
@@ -31,7 +31,8 @@ const Button = (props: IButtonProps) => {
           "buttonEntire",
           `${type}-button`,
           icon ? "btn-icon-wrapper" : "",
-          loading && "btn-loading"
+          loading && "btn-loading",
+          classes
         )}
         onClick={handleOnClickBtn}
       >

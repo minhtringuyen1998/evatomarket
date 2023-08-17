@@ -1,0 +1,63 @@
+@import "../color";
+@import "../font";
+@import "../mixins";
+
+.banner_container {
+  background-image: url("https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/04/bg-hero.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  padding :80px 0 0 0 ;
+  .container {
+    .row {
+      row-gap: 20px;
+      .banner_left {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        .title_banner {
+          font-weight: 200;
+          font-size: 60px;
+          color : $green-btn;
+          position: relative;
+          width: fit-content;
+          line-height: 1.1;
+          letter-spacing: 1px;
+          margin-bottom: 20px;
+          &::after {  
+            content : "";
+            position: absolute;
+            height: 30px;
+            width: 100%;
+            left: 0;
+            top: 100%;
+            background-color: $green-btn;
+            opacity: 0.15;
+            transform: translateY(-100%);
+          }
+        }
+        .sub-title_banner{
+          color : black;
+          font-size: 60px;
+          font-weight: 800;
+        }
+        .content_banner {
+          color :#818c96;
+          font-size: 25px;
+          margin : 10px 0;
+          line-height: 2;
+          font-weight: 300;
+        }
+        .btn_banner_container {
+          margin-top: 20px;
+          display: flex;
+          gap: 20px;
+        }
+      }
+      .banner_right{
+        .img_container {
+          height: 600px;
+        }
+      }
+    }
+  }
+}

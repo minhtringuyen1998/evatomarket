@@ -3,7 +3,6 @@ import clsx from "clsx";
 import { ITypoProps } from "../interfaces/components";
 import { Children } from "react";
 const Text = (props: ITypoProps) => {
-  console.log(props.hoverEffect);
   const {
     onClick = () => {},
     hoverEffect,

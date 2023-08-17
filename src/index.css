@@ -30,8 +30,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+html {
+  scroll-behavior: smooth;
+}
 .icon-basket:before {
   content: "\e901";
+}
+* {
+  margin: 0;
+  padding: 0;
 }
 body {
   font-family: Poppins , sans-serif;
@@ -42,3 +49,6 @@ body {
 }
 
 
+.container-spacing {
+  height: 100px;
+}
