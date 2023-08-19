@@ -30,6 +30,20 @@ export interface ICartList {
   listProduct? : any[];
   show : boolean;
 }
+export interface IProduct {
+  imgUrl : string;
+  title : string;
+  price: string;
+  currency : string;
+  discountPrice? : string;
+  saleOff? : boolean;
+  stars? : number
+}
+export interface IProductProps extends IProduct {
+  addToCart : () => void;
+  addToWishList : () => void;
+  onViewDetail : () => void;
+}
 export interface IImageLazyLoad {
   dataSrc : string,
 }

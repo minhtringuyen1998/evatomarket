@@ -25,6 +25,7 @@ const HomePage = (props: any) => {
             <CategoriesHome />
             <SectionSpacing />
             <ProductListHome />
+            <SectionSpacing />
           </>
         ) : (
           <Outlet />

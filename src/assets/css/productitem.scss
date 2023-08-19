@@ -1,0 +1,139 @@
+@import "../color";
+@import "../mixins";
+@import "../font";
+
+.product_container {
+  border-radius: 20px 0 20px 0;
+  box-shadow:0px 8px 64px 0px rgba(18,45,64,0.1);
+  padding :30px;
+  position: relative;
+  background-color: white;
+  height: 100%;
+  &:hover {
+    h2 {
+      color :$green-btn;
+    }
+    .btn_add_to_cart {
+      display: flex;
+    }
+  }
+  .img_container {
+    height: 275px;
+    margin: 20px 0px;
+    img {
+      mix-blend-mode: multiply;
+    }
+  }
+  .wrapper_buttons_icon {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    top: 20px;
+    right: 20px;
+      .wrap_btn_icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1.5px solid rgba(159,182,203,0.2);
+        display: flex;
+        transition: all .3s ease-in-out;
+        position: relative;
+        &:hover {
+          border-color: $green-btn;
+          .icon {
+            color :$green-btn
+          }
+          .icon + .btn {
+            opacity: 1;
+            transform: scaleX(1) ;
+          }
+        }
+        .icon {
+          color  : #000000;
+          font-size: 1.5rem;
+          vertical-align: middle;
+          align-self: center;
+          margin : 0 auto;
+          transition: inherit;
+          cursor: pointer;
+          transition: all .3s ease-in-out;
+              }
+          
+    .btn_add {
+      position: absolute;
+      background-color: $green-btn;
+      color: white;
+      font-size: 14px;
+      border-radius: 8px;
+      padding :3px;
+      display: block;
+    }
+  
+  }
+  .btn {
+    position: absolute;
+    right: 45px;
+    padding : 2px 6px;
+    display: inline-block;
+    background-color: $green-btn;
+    color:white;
+    font-size: 14px;
+    border-radius: 16px;
+    transition: all  .3s ease-in-out;
+    transform: scale(0);
+    opacity: 0;
+    top: 5px;
+    z-index: 1;
+  }
+  .wish_list {
+    width: 13ch;
+  }
+  .quick_view {
+    width : 10ch
+  }
+
+}
+.product_info {
+  font-family: $fontPopins;
+  h2 {
+    padding : .5rem 0;
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 1.2px;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .wrapper-star {
+    position: relative;
+    top  :5px;
+    .solid_star, .outline_star {
+      color :#ffbb00;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+  }
+  .price {
+    font-size: 24px;
+    color : #262626;
+
+  }
+  .discount_price {
+    font-size: 17px;
+    color :#7A7A7A;
+  }
+}
+.btn_add_to_cart {
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -27px;
+  justify-content: center;
+}
+}

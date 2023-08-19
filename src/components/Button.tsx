@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 const Button = (props: IButtonProps) => {
   const { onClick = () => {}, children, type, icon, load, classes } = props;
   const [loading, setLoading] = useState<boolean>(false);
+  const [showSuccess, setShowSuccess] = useState(false);
   const handleOnClickBtn = () => {
     if (typeof load == "number") {
       if (typeof load == "number") {
@@ -13,6 +14,7 @@ const Button = (props: IButtonProps) => {
         setTimeout(() => {
           onClick();
           setLoading(false);
+          setShowSuccess(true);
         }, load);
       }
     } else {
@@ -24,6 +26,17 @@ const Button = (props: IButtonProps) => {
       setLoading(load);
     }
   }, [load]);
+  useEffect(() => {
+    let timeout: any;
+    if (showSuccess) {
+      timeout = setTimeout(() => {
+        setShowSuccess(false);
+      }, 1000);
+    }
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [showSuccess]);
   return (
     <div className="btn-container">
       <button
@@ -36,19 +49,16 @@ const Button = (props: IButtonProps) => {
         )}
         onClick={handleOnClickBtn}
       >
-        {icon && <span>{icon}</span>}
+        {icon && <span className="icon-btn">{icon}</span>}
         <span className="content">{children}</span>
         {typeof load !== "undefined" &&
-          (loading ? (
-            <span className="loading">
-              <AiOutlineLoading />
-            </span>
-          ) : (
-            <span className="success">
-              {" "}
-              <AiOutlineCheck />
-            </span>
-          ))}
+          (loading ? <span className="loading"></span> : <></>)}
+        {showSuccess && (
+          <span className="success">
+            {" "}
+            <AiOutlineCheck />
+          </span>
+        )}
       </button>
     </div>
   );

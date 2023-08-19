@@ -1,20 +1,39 @@
 import { Col, Container, Row } from "react-bootstrap";
 import Button from "../components/Button";
-import { VARIANTS } from "../interfaces/components";
-
+import { IProduct, VARIANTS } from "../interfaces/components";
+import "../assets/css/productlisthome.scss";
+import { listProduct } from "../data/dataProducts";
+import ProductItem from "../modules/ProductItem";
 const ProductListHome = () => {
   return (
     <Container as="section" className="container_product_list">
-      <Row>
+      <Row className="product_list_header">
         <Col md={4}>
-          <h3>
+          <h2>
             Best Seller <span>Products</span>
-          </h3>
+          </h2>
         </Col>
-        <Col md={{ span: 4, offset: 4 }}>
+        <Col md={{ span: "auto", offset: 6 }}>
           <Button type={VARIANTS.PRIMARY}>View all Products</Button>
         </Col>
       </Row>
+      <div className="product_list_body">
+        {listProduct.slice(0, 8).map((product: IProduct, index: number) => {
+          return (
+            <ProductItem
+              key={`${product.title}_${index}`}
+              addToWishList={() => {
+                console.log("add to wish list");
+              }}
+              {...product}
+              onViewDetail={() => console.log("view detail")}
+              addToCart={() => {
+                console.log("addToCart");
+              }}
+            />
+          );
+        })}
+      </div>
     </Container>
   );
 };

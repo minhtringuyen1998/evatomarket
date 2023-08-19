@@ -11,6 +11,7 @@ function useOnScreen(ref :RefObject<HTMLElement>) {
          let imgElement = parentElement.children[0]
          imgElement.classList.remove("lazy")
          imgElement.src= imgElement.dataset.src
+         imgElement.removeAttribute("loading")
        },500)
       }
     }
