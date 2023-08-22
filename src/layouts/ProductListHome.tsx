@@ -4,13 +4,14 @@ import { IProduct, VARIANTS } from "../interfaces/components";
 import "../assets/css/productlisthome.scss";
 import { listProduct } from "../data/dataProducts";
 import ProductItem from "../modules/ProductItem";
+import TextUnderline from "../components/TextUnderline";
 const ProductListHome = () => {
   return (
     <Container as="section" className="container_product_list">
       <Row className="product_list_header">
         <Col md={4}>
           <h2>
-            Best Seller <span>Products</span>
+            Best Seller <TextUnderline>Products</TextUnderline>
           </h2>
         </Col>
         <Col md={{ span: "auto", offset: 6 }}>

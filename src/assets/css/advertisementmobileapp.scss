@@ -1,47 +1,34 @@
 @import "../color";
 @import "../font";
-@import "../mixins";
 
-.banner_container {
-  background-image: url("https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/04/bg-hero.jpg");
+.container_advertisement_mobile_app {
+  background-color: $green-btn;
+  background-image: url("https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/box-bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  padding :80px 0 0 0 ;
-  .container {
+  padding :80px !important;
+  border-radius: 80px;
     .row {
       row-gap: 20px;
       .banner_left {
         display: flex;
         justify-content: flex-start;
         flex-direction: column;
+         color : $primary-text;
         .title_banner {
           font-weight: 200;
           font-size: $font-size--x-large;
-          color : $green-btn;
           position: relative;
           width: fit-content;
           line-height: 1.1;
           letter-spacing: 1px;
           margin-bottom: 20px;
-          &::after {  
-            content : "";
-            position: absolute;
-            height: 30px;
-            width: 100%;
-            left: 0;
-            top: 100%;
-            background-color: $green-btn;
-            opacity: 0.15;
-            transform: translateY(-100%);
-          }
         }
         .sub-title_banner{
-          color : black;
-          font-size: 60px;
-          font-weight: 700;
+          font-size: 64px;
+          font-weight: 800;
         }
         .content_banner {
-          color :#818c96;
           font-size: 25px;
           margin : 10px 0;
           line-height: 2;
@@ -51,13 +38,22 @@
           margin-top: 20px;
           display: flex;
           gap: 20px;
+          align-items: center;
+          .btn {
+            width: 200px;
+            padding : unset
+          }
         }
       }
       .banner_right{
         .img_container {
           height: 600px;
+          background-image: url("https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/mobile.png");
+          margin-bottom: -80px;
+          background-repeat: no-repeat;
+          background-position: bottom;
+          background-size: contain;
         }
       }
     }
   }
-}

@@ -4,7 +4,15 @@ import { AiOutlineLoading, AiOutlineCheck } from "react-icons/ai";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 const Button = (props: IButtonProps) => {
-  const { onClick = () => {}, children, type, icon, load, classes } = props;
+  const {
+    onClick = () => {},
+    children,
+    type,
+    icon,
+    load,
+    classes,
+    iconPosition,
+  } = props;
   const [loading, setLoading] = useState<boolean>(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const handleOnClickBtn = () => {
@@ -45,6 +53,7 @@ const Button = (props: IButtonProps) => {
           `${type}-button`,
           icon ? "btn-icon-wrapper" : "",
           loading && "btn-loading",
+          iconPosition && `${iconPosition}_icon`,
           classes
         )}
         onClick={handleOnClickBtn}

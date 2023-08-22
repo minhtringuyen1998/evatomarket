@@ -8,6 +8,7 @@ import {
   AiOutlineHeart,
   AiOutlineSearch,
 } from "react-icons/ai";
+import { FaShoppingCart } from "react-icons/fa";
 import { ReactNode, useCallback } from "react";
 import Button from "../components/Button";
 const ProductItem = (props: IProductProps) => {
@@ -73,7 +74,12 @@ const ProductItem = (props: IProductProps) => {
         </Row>
       </div>
       <div className="btn_add_to_cart">
-        <Button type={VARIANTS.PRIMARY} load={1000}>
+        <Button
+          type={VARIANTS.PRIMARY}
+          load={1000}
+          icon={<FaShoppingCart />}
+          iconPosition="left"
+        >
           Add to cart
         </Button>
       </div>

@@ -3,12 +3,13 @@ import "../assets/css/categorieshome.scss";
 import ImageLoading from "../components/ImageLazy";
 import Text from "../components/Typo";
 import { SIZE, VARIANTS } from "../interfaces/components";
+import TextUnderline from "../components/TextUnderline";
 const CategoriesHome = () => {
   return (
     <Container as="section" className="container-categories_home">
       <h2>
         Discover Our {""}
-        <span>Categories</span>
+        <TextUnderline>Categories</TextUnderline>
       </h2>
       <Row fluid="xs">
         <Col xs={12} sm={5} lg xl className="service_item">

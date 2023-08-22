@@ -12,11 +12,11 @@
     width: fit-content;
     border-radius: 50px;
     padding :15px 30px;
-    font-family: $fontPopins;
     font-size: 16px;
     font-weight: bold;
     position: relative;
     transition: all .3s ease-in-out;
+    font-family: $fontPopins;
   }
   .primary-button {
     background-color: $green-btn;
@@ -36,6 +36,9 @@
       font-size: 20px;
       margin-bottom: 4px;
     }
+  }
+  .left_icon {
+    flex-direction: row;
   }
   [class^="secondary-"], [class*=" secondary-"] {
     background-color:$btn-hover-darkColor;

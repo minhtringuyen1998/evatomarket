@@ -8,6 +8,8 @@ import AdvertisementHome from "../layouts/Advertisement";
 import SectionSpacing from "../layouts/SectionSpacing";
 import CategoriesHome from "../layouts/CategoriesHome";
 import ProductListHome from "../layouts/ProductListHome";
+import AdvertisementMobileApp from "../layouts/AdvertisementMobileApp";
+import Blogs from "../layouts/Blogs";
 const HomePage = (props: any) => {
   const location = useLocation();
 
@@ -26,6 +28,9 @@ const HomePage = (props: any) => {
             <SectionSpacing />
             <ProductListHome />
             <SectionSpacing />
+            <AdvertisementMobileApp />
+            <SectionSpacing />
+            <Blogs />
           </>
         ) : (
           <Outlet />
