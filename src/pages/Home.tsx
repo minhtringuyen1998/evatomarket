@@ -10,6 +10,7 @@ import CategoriesHome from "../layouts/CategoriesHome";
 import ProductListHome from "../layouts/ProductListHome";
 import AdvertisementMobileApp from "../layouts/AdvertisementMobileApp";
 import Blogs from "../layouts/Blogs";
+import Footer from "../layouts/Footer";
 const HomePage = (props: any) => {
   const location = useLocation();
 
@@ -36,6 +37,8 @@ const HomePage = (props: any) => {
           <Outlet />
         )}
       </section>
+      <SectionSpacing />
+      <Footer />
     </>
   );
 };

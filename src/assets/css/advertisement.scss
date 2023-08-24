@@ -22,7 +22,6 @@
         color : white;
         & > p:first-child {
           font-weight: 300;
-          margin-bottom: unset;
           font-size:30px;
         }
       }
@@ -36,7 +35,6 @@
             font-weight: 300;
             color :$green-btn;
             font-size:30px;
-            margin-bottom: unset;
           }
         }
       }
@@ -50,7 +48,6 @@
           &:first-child {
             font-weight: 300;
             font-size:30px;
-            margin-bottom: unset;
           }
         }
         .btn_hover_custom {

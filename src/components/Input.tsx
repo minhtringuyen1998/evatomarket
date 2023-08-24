@@ -8,11 +8,13 @@ const InputComponent = (props: IInputProps) => {
     onBlur = () => {},
     type,
     icon,
+    buttonChild,
   } = props;
   return (
     <div className={clsx(`${type}-input`, "inputEntire")}>
       <input placeholder={placeholder} onChange={onChange} />
       {icon && <div className="iconWrapper">{icon}</div>}
+      {buttonChild && <div className="buttonWrapper">{buttonChild}</div>}
     </div>
   );
 };

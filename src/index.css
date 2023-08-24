@@ -1,8 +1,5 @@
 
-* {
-  margin :0 ;
-  padding : 0;
-}
+
 
 @font-face {
   font-family: 'icomoon';
@@ -41,17 +38,19 @@ html {
   padding: 0;
 }
 
-h2 , h3  ,h4 ,h5 ,h6 , p , button {
-  font-family: Poppins,sans-serif;
-}
-body {
+body {  
+
   font-family: Poppins , sans-serif;
   ::selection {
     background-color :#01E281;
     color: white;
   }
 }
+body  :is(p , h1,h2 ,h3 ,h4 , h5 ,h6 , span )  {
+  margin-bottom: 0;
+  font-family: Poppins,sans-serif;
 
+}
 
 .container-spacing {
   height: 100px;

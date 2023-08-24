@@ -22,6 +22,7 @@ export interface IInputProps {
   onChange: (val : any) => void;
   onBlur? : (val : any) => void;
   icon? : ReactNode,
+  buttonChild? : ReactNode
 }
 export interface ICartList {
   onRemoveItem? : (id : string ) => void;

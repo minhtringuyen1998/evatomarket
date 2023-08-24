@@ -16,7 +16,7 @@
     font-size: inherit;
     max-width: 360px;
     &::placeholder {
-      color: $primary-text;
+      color: inherit;
     }
   }
   & > .iconWrapper {
@@ -37,9 +37,29 @@
       font-size: 1.2rem;
     }
   }
+  & > .buttonWrapper {
+    cursor: pointer;
+    position: absolute;
+    right:4px;
+    max-height: 51px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top : 50%;
+    padding :5px;
+    transform: translateY(-50%);
+  }
 }
 
 .light-input {
   background-color:rgba(255,255,255,0.15) ;
   color: $primary-text;
+}
+.primary-input {
+  background-color: white;
+  color: #444;
+  height: 61px;
+  &::placeholder {
+    color :#444
+  }
 }
