@@ -9,7 +9,8 @@ import Text from "../components/Typo";
 import CartList from "../modules/CartList";
 import { Row, Container, Col } from "react-bootstrap";
 import { AiOutlineMenu } from "react-icons/ai";
-const Header = () => {
+const Header = (props: { handleShowMenuResponsive: () => void }) => {
+  const { handleShowMenuResponsive } = props;
   const [textSearch, setTextSearch] = useState<string>("");
   const [show, setShow] = useState<boolean>(false);
   const hanldeChange = (val: any) => {
@@ -72,7 +73,10 @@ const Header = () => {
               <FiHeart className="icon" />
             </div>
 
-            <div className="icon_wrapper  icon-menu">
+            <div
+              className="icon_wrapper  icon-menu"
+              onClick={handleShowMenuResponsive}
+            >
               <AiOutlineMenu className="icon" />
             </div>
           </Col>

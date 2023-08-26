@@ -5,7 +5,8 @@ export interface ITypoProps {
   size: SIZE ,
   type: VARIANTS,
   children: ReactNode
-  disableTransition? : boolean
+  disableTransition? : boolean;
+  classes? : string
 }
 export interface IButtonProps {
   type: VARIANTS,

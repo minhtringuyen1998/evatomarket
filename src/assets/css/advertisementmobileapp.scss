@@ -1,15 +1,17 @@
 @import "../color";
 @import "../font";
+@import "../mixins";
 
 .container_advertisement_mobile_app {
   background-color: $green-btn;
   background-image: url("https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/box-bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  padding :80px !important;
   border-radius: 80px;
+  padding : 80px 0;
     .row {
       row-gap: 20px;
+      padding :0 80px;
       .banner_left {
         display: flex;
         justify-content: flex-start;
@@ -39,8 +41,10 @@
           display: flex;
           gap: 20px;
           align-items: center;
+          flex-flow: row wrap;
+          justify-content: flex-start;
           .btn {
-            width: 200px;
+            flex-basis: 200px;
             padding : unset
           }
         }
@@ -53,6 +57,45 @@
           background-repeat: no-repeat;
           background-position: bottom;
           background-size: contain;
+        }
+      }
+    }
+  }
+  @include mobile {
+    .container_advertisement_mobile_app {
+      max-width: calc(100% - 30px);
+      margin : 0 auto;
+      border-radius: $border-radius--mobile;
+      padding : 20px 0;
+      background-position: unset;
+      background-repeat: repeat-y;
+      .row {
+        padding : 0 20px;
+  
+        .banner_left  {
+          align-items: center;
+          .title_banner {
+            margin-top: 30px;
+            font-size: 22px;
+            text-align: center;
+          }
+          .sub-title_banner {
+            font-size: 32px;
+            font-weight: 600;
+          }
+          .content_banner {
+            font-size: 20px;
+            text-align: center;
+          }
+          .btn_banner_container {
+            justify-content: center;
+          }
+        }
+        .banner_right {
+          .img_container {
+            height: 300px;
+            margin-bottom: -20px;
+          }
         }
       }
     }

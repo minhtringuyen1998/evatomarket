@@ -2,26 +2,76 @@
 @import "../mixins";
 
 .container-list_term {
+  @include mobile {
+    padding : 0 !important;
+  }
   cursor: default;
   .row {
     padding :30px;
     justify-content: space-between;
+    @include mobile {
+      padding: 0;
+    }
     &  > .column:not(:last-child)   {
-    
         border-right: 1.5px solid rgba(255,255,255,0.3);
+        @include mobile {
+          border-right: unset;
+        }
     }
     .column {
       & >  p.typoEntire:first-child {
         margin-bottom: 20px;
       }
+      @include mobile {
+        & > p.show_list_term {
+          color :$green-btn !important;
+          svg {
+            color : $green-btn;
+          }
+        }
+        & > p.show_list_term + .list_term  {
+            ul {
+              height:205px;
+            }
+        }
+        padding :0;
+        & >  p.typoEntire:first-child {
+          padding : 10px 20px;
+          position: relative;
+          width: 100%;
+          padding :15px 30px;
+          color: $primary-text;
+          font-size: 14px;
+          margin-bottom: unset;
+          font-weight: bold;
+          border-top: $border_nav_menu;
+          border-left: 2px solid rgba(167,167,167,.14);
+        }
+      }
       ul {
         list-style-type: none;
         padding : 0;
         margin : 0;
+        @include mobile {
+          border-top:$border_nav_menu ;
+          border-left: 4px solid rgba(167,167,167,.14);
+          height: 0;
+          transition: all 0.3s linear;
+          overflow: hidden;
+        }
         li:not(:last-child) {
           margin-bottom: 10px;
+          @include mobile {
+            margin-bottom: 0;
+          }
         }
         li {
+          @include mobile {
+            padding : 8px 30px;
+            &:not(:last-child) {
+              border-bottom: $border_nav_menu;
+            }
+          }
           display: flex;
           justify-content: flex-start;
           align-items: baseline;
@@ -33,13 +83,44 @@
             font-size: 16px;
             font-weight: 400;
             margin: unset;
+            @include mobile {
+              font-size: 12px;
+              color :#DDDDDD
+            }
           }
           & > span >  svg {
            color:rgba(255,255,255,0.3);
            font-size: 1.5rem;
+           @include mobile {
+            font-size:16px;
+          }
+          }
+        }
+      }
+      & > p.typoEntire::after {
+        content : " ";
+        position: absolute;
+        height: 100%;
+        width: 1px;
+        background-color: rgba(167,167,167,.2);
+        right: 45px;
+        top: 0;
+      }
+      .arrow_down {
+        position: absolute;
+        right: -5px;
+        top: 50%;
+        transform: translateY(-50%);
+        color:$white;
+        @include mobile {
+          right: 12px;
+          svg {
+            color: inherit;
+            font-size: 26px;
           }
         }
       }
     }
+
   }
 }

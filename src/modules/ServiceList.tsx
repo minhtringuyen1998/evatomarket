@@ -7,7 +7,7 @@ const ServiceList = (props: any) => {
   return (
     <Container fluid="lg" className="container_services">
       <Row>
-        <Col xs={12} sm={12} md={5} lg={2} className="service_item">
+        <Col xs={12} sm={12} md={5} lg={2} className="service_item  ">
           <div className="img_container">
             <ImageLoading dataSrc="https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/s1.png" />
           </div>

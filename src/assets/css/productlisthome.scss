@@ -1,9 +1,10 @@
 @import "../font";
 @import "../color";
-
+@import "../mixins";
 .container_product_list {
   .product_list_header {
     margin-bottom: 20px;
+    row-gap: 20px;
     h2 {
       font-size: 36px;
       font-weight: bold;
@@ -17,5 +18,30 @@
     grid-template-columns: repeat(4 , 1fr);
     grid-template-rows: repeat(2 , 1fr) ;
     gap : 40px;
+  }
+}
+
+@include mobile {
+  .container_product_list {
+    .row {
+      justify-content: center;
+      h2 {
+        text-align: center;
+        line-height: 1.6;
+      }
+    }
+    .product_list_body {
+      grid-template-columns: 100%;
+      .product_container {
+        margin: 0 15px;
+        h2 {
+          font-size: 22px;
+        }
+        .wrapper_buttons_icon {
+          display: none;
+        }
+      }
+    }
+   
   }
 }

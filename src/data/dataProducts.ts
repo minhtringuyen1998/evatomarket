@@ -48,27 +48,20 @@ import {IProduct} from "../interfaces/components"
   }
   ,  {
     imgUrl : "https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/pr7-600x600.jpg",
-    title : "Organic Natural Bananas",
+    title : "Flash Spray Wipe Done",
     price : "79",
     currency : "$",
-    saleOff : false
-  }
-  ,  {
-    imgUrl : "https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/pr8-600x600.jpg",
-    title : "Flash Spray Wipe Done",
-    price : "35",
-    currency : "$",
     saleOff : false,
-    stars : 3,
-  }
-  ,  {
-    imgUrl : "https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/pr9-600x600.jpg",
+    stars :3
+  },
+  {
+    imgUrl : "https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/pr8-600x600.jpg",
     title : "Dove Colour Care Pro",
     price : "35",
     currency : "$",
     saleOff : false,
     stars : 5
-  }
+  } 
 ]
   // ,  {
   //   imgUrl : "https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/pr1-600x600.jpg",

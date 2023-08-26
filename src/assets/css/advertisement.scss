@@ -13,7 +13,7 @@
         border-radius: 20px;
         font-size: $font-size--x-large;
         background-size: contain;
-      background-repeat: no-repeat;
+        background-repeat: no-repeat;
 
       }
       .advertisement:nth-child(1) {
@@ -74,6 +74,33 @@
           background-color: $green-btn;
           color : $btn-hover-darkColor;
          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .container_advertisement {
+    .container {
+      .advertisement_gallery {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(4 , minmax(250px , auto));
+        .advertisement {
+          p  ,&:nth-child(2) >  p  {
+            text-align: center;
+          }
+        }
+        .advertisement:nth-child(3) ,.advertisement:nth-child(4) {
+          padding : 50px 50px 300px 50px;
+          grid-column: unset;
+          grid-row: unset;
+          &>p {
+            max-width: unset;
+          }
+          .btn_hover_custom {
+            margin : 50px auto;
+          }
         }
       }
     }

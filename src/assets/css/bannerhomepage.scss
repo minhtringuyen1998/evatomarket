@@ -61,3 +61,39 @@
     }
   }
 }
+@include mobile {
+  .banner_container {
+    background-position: top;
+    margin-top: 80px;
+    .container {
+      .row {
+        .banner_left {
+          text-align: center;
+          row-gap :10px;
+          h2.title_banner {
+            font-size: 26px;
+            margin : 0 auto;
+            &::after {
+              height: 12px;
+            }
+          }
+          .sub-title_banner {
+              font-size: 36px;
+          }
+          .content_banner {
+            font-size: 20px;
+            line-height: 1.2;
+          }
+          .btn_banner_container {
+            flex-direction: column;
+          }
+        }
+        .banner_right {
+          .img_container {
+            height: 450px;
+          }
+        }
+      }
+    }
+  }
+}

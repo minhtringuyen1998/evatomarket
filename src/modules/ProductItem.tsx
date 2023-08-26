@@ -30,14 +30,16 @@ const ProductItem = (props: IProductProps) => {
       .replace(".", "");
   };
   const renderStars = useCallback((stars: number): ReactNode => {
-    let arrSolidStar = Array(stars).fill(
-      <AiTwotoneStar className="solid_star" />
-    );
-    return stars < 5
-      ? arrSolidStar.concat(
-          Array(5 - stars).fill(<AiOutlineStar className="outline_star" />)
-        )
-      : arrSolidStar;
+    let result = [];
+    for (let i = 0; i < 5; i++) {
+      let keyItem = `${randomId()}`;
+      if (stars >= i + 1) {
+        result.push(<AiTwotoneStar key={keyItem} className="solid_star" />);
+      } else {
+        result.push(<AiOutlineStar key={keyItem} className="outline_star" />);
+      }
+    }
+    return result;
   }, []);
   const renderPrice = useCallback((priceNumber: string): string => {
     return `${currency}${priceNumber}.00`;

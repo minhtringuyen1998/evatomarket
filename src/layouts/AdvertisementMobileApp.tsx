@@ -7,7 +7,7 @@ const AdvertisementMobileApp = () => {
       <Row>
         <Col xs={12} lg={6} className="banner_left">
           <h2 className="title_banner">XtraSupermarket</h2>
-          <p className="sub-title_banner">Fresher than Ever</p>
+          <p className="sub-title_banner">Faster on Mobile</p>
           <p className="content_banner">
             A supermarket is a self-service shop offering a wide variety of
             food, beverages and household products, organized into sections.

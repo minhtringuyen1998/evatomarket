@@ -23,12 +23,12 @@ const Footer = () => {
     <footer>
       <Container as="section" className="container_subscribe">
         <Row>
-          <Col className="col_left">
+          <Col xs="12" md="auto" className="col_left">
             <h2>
               Subscribe to <span>Newsletter</span>
             </h2>
           </Col>
-          <Col>
+          <Col xs="12" md="7">
             <div className="wrapper_input">
               <InputComponent
                 buttonChild={
@@ -53,7 +53,7 @@ const Footer = () => {
       </Container>
       <Container as="section" className="container_footer_content">
         <Row>
-          <Col className="col left">
+          <Col xs="12" md="3" className="col left">
             <div>
               <div className="img_container">
                 <ImageLoading dataSrc="https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/04/logo-sm.png" />
@@ -75,7 +75,7 @@ const Footer = () => {
               </div>
             </div>
           </Col>
-          <Col className="col middle">
+          <Col xs="12" md="3" className="col middle">
             <div>
               <h4>Useful Links</h4>
               <ul>
@@ -94,7 +94,7 @@ const Footer = () => {
               </ul>
             </div>
           </Col>
-          <Col className="col right">
+          <Col xs="12" md="3" className="col right">
             <div>
               <h4>
                 Interested in a Great Way

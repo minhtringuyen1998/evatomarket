@@ -1,5 +1,5 @@
 @import "../color";
-
+@import "../mixins";
 .container_services_menu {
   background-color: $white;
   border-radius: 100px;
@@ -41,6 +41,20 @@
           color :#666666;
 
         }
+      }
+    }
+  }
+}
+@include mobile {
+  .container_services_menu {
+    border-radius: 20px;
+    max-width: calc(100% - 30px);
+    .row {
+      .service {
+        justify-content: flex-start;
+        flex :1;
+        width: 100%;
+        gap : 15px
       }
     }
   }

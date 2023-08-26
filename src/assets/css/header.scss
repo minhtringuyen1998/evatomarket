@@ -115,6 +115,7 @@ header#header-container {
       .icon-menu {
         font-size: 17.5px;
         margin-left: 20px;
+        display: none;
       }
     }
   }
@@ -155,7 +156,8 @@ header#header-container {
           }
         }
         .icon-menu {
-          margin : unset
+          margin : unset;
+          display: block;
         }
 
       }

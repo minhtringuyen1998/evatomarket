@@ -8,18 +8,11 @@ interface IBlogProps {
   term: string;
   title: string;
   date: string;
-  i: number;
-  rangeIndex: number[];
 }
 const BlogItem = (props: IBlogProps) => {
-  const { imgUrl, term, title, date, i, rangeIndex = [] } = props;
+  const { imgUrl, term, title, date } = props;
   return (
-    <div
-      className={clsx(
-        "container_blog",
-        rangeIndex[0] <= i && i <= rangeIndex[1] ? "" : "hidden"
-      )}
-    >
+    <div className={clsx("container_blog")}>
       <div className="wrapper_term">
         <p>{term}</p>
       </div>

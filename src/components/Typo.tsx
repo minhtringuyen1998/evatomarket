@@ -1,7 +1,6 @@
 import "../assets/css/typo.scss";
 import clsx from "clsx";
 import { ITypoProps } from "../interfaces/components";
-import { Children } from "react";
 const Text = (props: ITypoProps) => {
   const {
     onClick = () => {},
@@ -10,6 +9,7 @@ const Text = (props: ITypoProps) => {
     size,
     children,
     disableTransition,
+    classes,
   } = props;
   return (
     <p
@@ -19,7 +19,8 @@ const Text = (props: ITypoProps) => {
         hoverEffect && `${type}-text-hover`,
         `${type}-text`,
         `text-${size}`,
-        disableTransition && "remove-transition"
+        disableTransition && "remove-transition",
+        classes
       )}
     >
       {children}

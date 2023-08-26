@@ -9,12 +9,12 @@ const ProductListHome = () => {
   return (
     <Container as="section" className="container_product_list">
       <Row className="product_list_header">
-        <Col md={4}>
+        <Col xs="7" md={4}>
           <h2>
             Best Seller <TextUnderline>Products</TextUnderline>
           </h2>
         </Col>
-        <Col md={{ span: "auto", offset: 6 }}>
+        <Col xs="auto" md={{ span: "auto", offset: 6 }}>
           <Button type={VARIANTS.PRIMARY}>View all Products</Button>
         </Col>
       </Row>

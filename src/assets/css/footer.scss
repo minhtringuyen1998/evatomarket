@@ -5,8 +5,8 @@ footer {
   color: $primary-text;
   background-color: #122d40;
   border-radius: 60px 60px 0 0;
-  padding: 30px 0 0;
-
+  padding: 160px  0 0;
+  position: relative;
   .container_subscribe {
     padding: 60px;
     background-color: #1C3E56;
@@ -15,9 +15,14 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 60px;
-    position: relative;
+    position: absolute;
     top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    .row {
+      justify-content: space-between;
 
+    }
     .custom_padding {
       padding: 10px 30px;
     }
@@ -40,16 +45,13 @@ footer {
 
   .container_footer_content {
     .row {
-      flex-direction: row;
-      flex-wrap: nowrap;
       align-items: stretch;
-      column-gap: 30px;
-
+      justify-content: space-between;
       .col {
         padding: 50px;
         border: $border;
         border-radius: 60px;
-
+        width: 400px;
         &>div {
           height: 100%;
           display: flex;
@@ -232,6 +234,70 @@ footer {
       }
       .img_container {
         width: 260px;
+      }
+    }
+  }
+}
+
+@include mobile {
+  footer {
+    padding: 120px 0 0;
+    margin-top: 200px;
+    border-radius: $border-radius--mobile $border-radius--mobile 0 0 ;
+    .container_subscribe {
+      top: -240px;
+      max-width: calc(100% - 40px);
+      border-radius: $border-radius--mobile;
+      padding : 30px 30px 120px 30px;
+      .col_left  {
+        h2 {
+          font-size: 30px;
+          text-align: center;
+          margin-bottom: 30px;
+        }
+      
+      }
+      .col-12 {
+      
+        .wrapper_input {
+          max-width: 100%;
+          .inputEntire {
+            min-width: 100%;
+            .buttonWrapper {
+              top: 180%;
+              width: 100%;
+              z-index: 10;
+            }
+          }
+        }
+      }
+    }
+    .container_footer_content {
+      .row {
+        flex-flow: wrap;
+        row-gap: 20px;
+        .col {
+          max-width: 350px;
+          margin: 0 auto;
+         & > div  {
+          justify-content: center;
+          align-items: center;
+         }
+        }
+      }
+      
+    }
+    .container_bottom {
+      .row {
+        row-gap: 30px;
+        .left {
+          p {
+            text-align: center;
+          }
+        }
+        .img_container {
+          margin : 0 auto;
+        }
       }
     }
   }
