@@ -40,10 +40,7 @@ const ListTermCommon = () => {
   }, []);
   const handleClick = (event: any) => {
     let target = event.target as Element;
-    if (target.classList.contains("show_list_term")) {
-      return target.classList.remove("show_list_term");
-    }
-    target.classList.add("show_list_term");
+    target.classList.toggle("show_list_term");
   };
   useEffect(() => {
     if (isMobile() && inIt) {

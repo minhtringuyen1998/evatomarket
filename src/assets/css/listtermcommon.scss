@@ -21,6 +21,8 @@
     .column {
       & >  p.typoEntire:first-child {
         margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: bold;
       }
       @include mobile {
         & > p.show_list_term {
@@ -97,6 +99,7 @@
           }
         }
       }
+     @include mobile {
       & > p.typoEntire::after {
         content : " ";
         position: absolute;
@@ -106,6 +109,7 @@
         right: 45px;
         top: 0;
       }
+     }
       .arrow_down {
         position: absolute;
         right: -5px;

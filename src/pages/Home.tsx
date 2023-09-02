@@ -11,7 +11,7 @@ import ProductListHome from "../layouts/ProductListHome";
 import AdvertisementMobileApp from "../layouts/AdvertisementMobileApp";
 import Blogs from "../layouts/Blogs";
 import Footer from "../layouts/Footer";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useState } from "react";
 const HomePage = (props: any) => {
   const location = useLocation();
@@ -27,7 +27,7 @@ const HomePage = (props: any) => {
     bodyEle?.classList.remove("disable_scroll");
   };
   return (
-    <>
+    <HelmetProvider>
       <Helmet>
         <title>Supermarket</title>
       </Helmet>
@@ -57,7 +57,7 @@ const HomePage = (props: any) => {
       </section>
       <SectionSpacing />
       <Footer />
-    </>
+    </HelmetProvider>
   );
 };
 

@@ -21,7 +21,7 @@
  @each $key,$val in $sizes {
   .text-#{$key} {
     font-size: $val;
-    line-height: 1;
+    line-height: 1.2;
   }
  }
  .remove-transition {

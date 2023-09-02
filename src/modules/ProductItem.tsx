@@ -1,5 +1,6 @@
 import { Row, Col } from "react-bootstrap";
 import "../assets/css/productitem.scss";
+import React from "react";
 import ImageLoading from "../components/ImageLazy";
 import { IProductProps, VARIANTS } from "../interfaces/components";
 import {
@@ -11,24 +12,17 @@ import {
 import { FaShoppingCart } from "react-icons/fa";
 import { ReactNode, useCallback } from "react";
 import Button from "../components/Button";
+import { randomId, renderPrice } from "../utils";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../store";
+import { addToCart } from "../reducer/cartSlice";
 const ProductItem = (props: IProductProps) => {
-  const {
-    addToCart,
-    addToWishList,
-    imgUrl,
-    title,
-    discountPrice,
-    saleOff,
-    price,
-    currency,
-    stars,
-  } = props;
-  const randomId = () => {
-    return (Math.random() * 10)
-      .toString(36)
-      .slice(0, Math.floor(Math.random() * 100))
-      .replace(".", "");
-  };
+  const dispatch = useDispatch<AppDispatch>();
+  const { imgUrl, title, discountPrice, saleOff, price, currency, stars } =
+    props.productInfo;
+  const handleAddToCart = useCallback(() => {
+    dispatch(addToCart({ product: props.productInfo }));
+  }, [props.productInfo]);
   const renderStars = useCallback((stars: number): ReactNode => {
     let result = [];
     for (let i = 0; i < 5; i++) {
@@ -41,9 +35,7 @@ const ProductItem = (props: IProductProps) => {
     }
     return result;
   }, []);
-  const renderPrice = useCallback((priceNumber: string): string => {
-    return `${currency}${priceNumber}.00`;
-  }, []);
+
   return (
     <div className="product_container">
       <div className="img_container">
@@ -81,6 +73,7 @@ const ProductItem = (props: IProductProps) => {
           load={1000}
           icon={<FaShoppingCart />}
           iconPosition="left"
+          onClick={handleAddToCart}
         >
           Add to cart
         </Button>
@@ -88,4 +81,4 @@ const ProductItem = (props: IProductProps) => {
     </div>
   );
 };
-export default ProductItem;
+export default React.memo(ProductItem);

@@ -9,7 +9,10 @@ import Text from "../components/Typo";
 import CartList from "../modules/CartList";
 import { Row, Container, Col } from "react-bootstrap";
 import { AiOutlineMenu } from "react-icons/ai";
+import { useSelector } from "react-redux";
+import { useGetCart } from "../reducer/cartSlice";
 const Header = (props: { handleShowMenuResponsive: () => void }) => {
+  const userCartList = useSelector(useGetCart);
   const { handleShowMenuResponsive } = props;
   const [textSearch, setTextSearch] = useState<string>("");
   const [show, setShow] = useState<boolean>(false);
@@ -63,8 +66,16 @@ const Header = (props: { handleShowMenuResponsive: () => void }) => {
               onMouseOut={removeCartList}
             >
               <span className="icon icon-basket"></span>
-              <span className="quality_product">2</span>
-              <CartList show={show} />
+              {userCartList.totalItem !== 0 && (
+                <span className="quality_product">
+                  {userCartList.totalItem}
+                </span>
+              )}
+              <CartList
+                show={show}
+                listProduct={userCartList.products}
+                totalPrice={userCartList.totalPrice}
+              />
             </div>
             <div className="line">
               <div className="header_line_2">&nbsp;</div>

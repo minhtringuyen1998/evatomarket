@@ -1,18 +1,27 @@
 import Text from "../components/Typo";
-import { ICartList, SIZE, VARIANTS } from "../interfaces/components";
+import {
+  ICartList,
+  IProductCart,
+  SIZE,
+  VARIANTS,
+} from "../interfaces/components";
 import "../assets/css/cartlist.scss";
 
 import clsx from "clsx";
 import { useMemo } from "react";
-const ItemCart = (props: any) => {
+import { renderPrice } from "../utils";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../store";
+import { removeFromCart } from "../reducer/cartSlice";
+interface IItemCart extends IProductCart {
+  onDelete: (param: string) => void;
+}
+const ItemCart = (props: IItemCart) => {
+  const { title, price, quantity, imgUrl, onDelete = () => {} } = props;
   return (
     <div className="item_small">
       <a href="#" className="img_link">
-        <img
-          src="https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/pr9-600x600.jpg"
-          className="cart_img_product"
-          alt=""
-        />{" "}
+        <img src={imgUrl} className="cart_img_product" alt="" />{" "}
       </a>
       <div className="cart_list_product_title">
         <h3>
@@ -23,31 +32,37 @@ const ItemCart = (props: any) => {
               hoverEffect
               disableTransition
             >
-              Dolmio Pasta Sauce Vita
+              {title}
             </Text>
           </a>
         </h3>
         <div className="cart_list_product_quantity">
-          1 x{" "}
-          <span className=" amount">
-            <span className="symbol">$</span>
-            22.00
-          </span>{" "}
+          {quantity} x <span className=" amount">{renderPrice(price)}</span>{" "}
         </div>
-        <div className="remove">x</div>
+        <div className="remove" onClick={() => onDelete(title)}>
+          x
+        </div>
       </div>
     </div>
   );
 };
 const CartList = (props: ICartList) => {
-  const { onRemoveItem, onCheckOut, listProduct, show } = props;
+  const { listProduct, show, totalPrice } = props;
+  const dispatch = useDispatch<AppDispatch>();
+  const handleDeletItem = (title: string) => {
+    dispatch(removeFromCart(title));
+  };
   const listProductData = useMemo(() => {
     {
-      return Array.from(
-        [1, 2, 3]
-          .fill(1)
-          .map((item: any, index: number) => <ItemCart key={`${index}`} />)
-      );
+      return listProduct.map((item: IProductCart, index: number) => {
+        return (
+          <ItemCart
+            onDelete={handleDeletItem}
+            {...item}
+            key={`${item.title}_${index}`}
+          />
+        );
+      });
     }
   }, [listProduct]);
   return (
@@ -57,11 +72,17 @@ const CartList = (props: ICartList) => {
         show && "cart_products_visibility"
       )}
     >
-      <div className="products">{listProductData}</div>
-      <div className="btn-cart_container">
-        <button>Cart 87$</button>
-        <button>Checkout</button>
-      </div>
+      {listProduct.length !== 0 ? (
+        <>
+          <div className="products">{listProductData}</div>
+          <div className="btn-cart_container">
+            <button>Cart {renderPrice(totalPrice)}</button>
+            <button>Checkout</button>
+          </div>
+        </>
+      ) : (
+        <span>No products in cart</span>
+      )}
     </div>
   );
 };

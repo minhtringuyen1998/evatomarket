@@ -1,39 +1,41 @@
 import {IProduct} from "../interfaces/components"
+import { randomId } from "../utils"
+
 
  export const listProduct : IProduct[] = [
-  {
+  { 
     imgUrl : "https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/pr1-600x600.jpg",
     title : "Organic Natural Bananas",
-    price : "79",
+    price : 79,
     currency : "$",
     saleOff : false
   },
   {
     imgUrl : "https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/pr2-600x600.jpg",
     title : "Awake Shower Shampoo Gel",
-    price : "87",
+    price : 87,
     currency : "$",
-    saleOff : false
+    saleOff : false,
   },
   {
     imgUrl : "https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/pr3-600x600.jpg",
     title : "The Sparkling Mineral Water",
-    price : "99",
+    price : 99,
     currency : "$",
-    saleOff : false
+    saleOff : false,
   },
   {
     imgUrl : "https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/pr4-600x600.jpg",
     title : "Best Roast Chicken Slices",
-    price : "69",
+    price : 69,
     currency : "$",
-    saleOff : false
+    saleOff : false,
   },
   {
     imgUrl : "https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/pr5-600x600.jpg",
     title : "Easy Body Wash Shampoo",
-    price : "12",
-    discountPrice : "15",
+    price : 12,
+    discountPrice : 15,
     currency : "$",
     saleOff : true,
     stars :4
@@ -41,7 +43,7 @@ import {IProduct} from "../interfaces/components"
   ,  {
     imgUrl : "https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/pr6-600x600.jpg",
     title : "Organic Natural Blueberries",
-    price : "35",
+    price : 35,
     currency : "$",
     saleOff : false,
     
@@ -49,7 +51,7 @@ import {IProduct} from "../interfaces/components"
   ,  {
     imgUrl : "https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/pr7-600x600.jpg",
     title : "Flash Spray Wipe Done",
-    price : "79",
+    price : 79,
     currency : "$",
     saleOff : false,
     stars :3
@@ -57,30 +59,40 @@ import {IProduct} from "../interfaces/components"
   {
     imgUrl : "https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/pr8-600x600.jpg",
     title : "Dove Colour Care Pro",
-    price : "35",
+    price : 35,
     currency : "$",
     saleOff : false,
     stars : 5
   } 
+  ,  {
+    imgUrl : "https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/pr9-600x600.jpg",
+    title : "Dolmio Pasta Sauce Vita",
+    price : 22,
+    currency : "$",
+    saleOff : false,
+    stars : 4
+  }
+  ,  {
+    imgUrl : "https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/pr10-600x600.jpg",
+    title : "Ocado Cowboy Steak",
+    price : 18,
+    currency : "$",
+    saleOff : false,
+    stars : 5
+  }
+  ,  {
+    imgUrl : "https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/pr1-600x600.jpg",
+    title : "Picard Asparagus Morel",
+    price : 44,
+    currency : "$",
+    saleOff : false,
+    stars : 4.2
+  },
+  {
+    imgUrl : "https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/pr4-600x600.jpg",
+    title : "Best Roast Chicken Slices",
+    price : 69,
+    currency : "$",
+    saleOff : false
+  },
 ]
-  // ,  {
-  //   imgUrl : "https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/pr1-600x600.jpg",
-  //   title : "Organic Natural Bananas",
-  //   price : "79",
-  //   currency : "$",
-  //   saleOff : false
-  // }
-  // ,  {
-  //   imgUrl : "https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/pr1-600x600.jpg",
-  //   title : "Organic Natural Bananas",
-  //   price : "79",
-  //   currency : "$",
-  //   saleOff : false
-  // }
-  // ,  {
-  //   imgUrl : "https://xtratheme.com/elementor/supermarket/wp-content/uploads/sites/106/2023/05/pr1-600x600.jpg",
-  //   title : "Organic Natural Bananas",
-  //   price : "79",
-  //   currency : "$",
-  //   saleOff : false
-  // }

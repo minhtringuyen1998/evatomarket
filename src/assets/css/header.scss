@@ -63,6 +63,9 @@ header#header-container {
           }
         }
         .text {
+          .text-medium {
+            font-size: inherit
+          }
           & > p:first-child {
             margin-bottom: 5px;
             color :#9fb6cb
@@ -157,7 +160,7 @@ header#header-container {
         }
         .icon-menu {
           margin : unset;
-          display: block;
+          display: flex;
         }
 
       }

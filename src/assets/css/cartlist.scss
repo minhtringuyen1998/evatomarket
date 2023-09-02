@@ -12,6 +12,8 @@
   border-radius: 8px;
   transition: all 0.5s ease-in-out;
   z-index: 3;
+  min-width: 296px;
+  text-align: center;
   &::after {
     content : " ";
     position : absolute;
@@ -27,7 +29,7 @@
     background: white;
     border-top-left-radius:8px ;
     border-top-right-radius: 8px;
-    width: 296px;
+    min-width: 296px;
     border: $border;
     border-bottom-width:0px;
     & > :not(.item_small:first-child ) {
@@ -39,6 +41,10 @@
       height: 101px;
       position: relative;
       box-sizing: border-box;
+      text-align: start;
+      .text-medium {
+        font-weight: bold;
+      }
       a {
         cursor: pointer;
         text-decoration: none;

@@ -25,27 +25,28 @@ export interface IInputProps {
   icon? : ReactNode,
   buttonChild? : ReactNode
 }
-export interface ICartList {
-  onRemoveItem? : (id : string ) => void;
-  onClickItem?: (id : string ) => void;
-  onCheckOut?: () => void;
-  listProduct? : any[];
-  show : boolean;
-}
+
 export interface IProduct {
   imgUrl : string;
   title : string;
-  price: string;
+  price: number;
   currency : string;
-  discountPrice? : string;
+  discountPrice? : number;
   saleOff? : boolean;
-  stars? : number
+  stars? : number;
 }
-export interface IProductProps extends IProduct {
-  addToCart : () => void;
-  addToWishList : () => void;
-  onViewDetail : () => void;
+export interface IProductProps {
+  productInfo : IProduct;
 }
+export interface IProductCart extends IProduct {
+  quantity : number,
+}
+export interface ICartList {
+  listProduct : IProductCart[];
+  show : boolean;
+  totalPrice : number
+}
+
 export interface IImageLazyLoad {
   dataSrc : string,
 }
