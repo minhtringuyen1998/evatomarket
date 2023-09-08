@@ -13,8 +13,16 @@ import Blogs from "../layouts/Blogs";
 import Footer from "../layouts/Footer";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { useGetModalData } from "../reducer/modalSlice";
+import { MODAL_NAME } from "../enum";
+import ModalReviewProduct from "../modals/ModalReviewProduct";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../store";
+import { close } from "../reducer/modalSlice";
 const HomePage = (props: any) => {
   const location = useLocation();
+  const dispatch = useDispatch<AppDispatch>();
   const [showResponNav, setShowResponNav] = useState(false);
   const handleShowMenu = () => {
     setShowResponNav(true);
@@ -26,6 +34,7 @@ const HomePage = (props: any) => {
     let bodyEle = document.querySelector("body");
     bodyEle?.classList.remove("disable_scroll");
   };
+  const modalData = useSelector(useGetModalData);
   return (
     <HelmetProvider>
       <Helmet>
@@ -57,6 +66,15 @@ const HomePage = (props: any) => {
       </section>
       <SectionSpacing />
       <Footer />
+      {modalData.name == MODAL_NAME.MODAL_REVIEW_PRODUCT && (
+        <ModalReviewProduct
+          show={modalData.name == MODAL_NAME.MODAL_REVIEW_PRODUCT}
+          onHide={() => {
+            dispatch(close());
+          }}
+          productInfo={modalData.data}
+        />
+      )}
     </HelmetProvider>
   );
 };

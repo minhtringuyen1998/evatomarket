@@ -3,6 +3,7 @@ import "../assets/css/imagelazy.scss";
 import { useRef } from "react";
 import useOnScreen from "../hooks/useOnScreen";
 import clsx from "clsx";
+import Spinner from "./Spinner";
 const ImageLoading = (props: IImageLazyLoad) => {
   const { dataSrc } = props;
   const ref = useRef(null);
@@ -15,7 +16,7 @@ const ImageLoading = (props: IImageLazyLoad) => {
         loading="lazy"
         key={`${dataSrc}`}
       />
-      <div className="spinner"></div>
+      <Spinner />
     </div>
   );
 };

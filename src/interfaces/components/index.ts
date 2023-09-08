@@ -8,6 +8,12 @@ export interface ITypoProps {
   disableTransition? : boolean;
   classes? : string
 }
+export interface IModal {
+  show : boolean;
+  backdrop? : boolean | "static";
+  onHide : () => void;
+  fullScreen? : boolean | 'sm-down'| 'md-down'| 'lg-down'| 'xl-down'| 'xxl-down';
+}
 export interface IButtonProps {
   type: VARIANTS,
   children : ReactNode,
@@ -37,6 +43,7 @@ export interface IProduct {
 }
 export interface IProductProps {
   productInfo : IProduct;
+  onViewDetail : (pro : IProduct) => void;
 }
 export interface IProductCart extends IProduct {
   quantity : number,

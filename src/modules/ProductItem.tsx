@@ -18,10 +18,11 @@ import { AppDispatch } from "../store";
 import { addToCart } from "../reducer/cartSlice";
 const ProductItem = (props: IProductProps) => {
   const dispatch = useDispatch<AppDispatch>();
+  const { onViewDetail, productInfo } = props;
   const { imgUrl, title, discountPrice, saleOff, price, currency, stars } =
-    props.productInfo;
+    productInfo;
   const handleAddToCart = useCallback(() => {
-    dispatch(addToCart({ product: props.productInfo }));
+    dispatch(addToCart({ product: productInfo }));
   }, [props.productInfo]);
   const renderStars = useCallback((stars: number): ReactNode => {
     let result = [];
@@ -46,11 +47,21 @@ const ProductItem = (props: IProductProps) => {
           <AiOutlineHeart className="icon" />
           <span className="btn wish_list">Add to wish list</span>
         </div>
-        <div className="wrap_btn_icon">
+        <div
+          className="wrap_btn_icon"
+          onClick={() => {
+            // onViewDetail(productInfo);
+          }}
+        >
           <AiOutlineSearch className="icon" />
           <span className="btn quick_view">Quick view</span>
         </div>
       </div>
+      {saleOff && (
+        <div className="sale_off">
+          <b>Sale!</b>
+        </div>
+      )}
       <div className="product_info">
         <h2>{title}</h2>
         <Row>

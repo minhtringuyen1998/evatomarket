@@ -96,6 +96,19 @@
   }
 
 }
+.sale_off {
+  background-color: $btn-hover-darkColor;
+  color : $primary-text;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  border-radius: 50%;
+  top: 20px;
+  left: 20px;
+}
 .product_info {
   font-family: $fontPopins;
   h2 {

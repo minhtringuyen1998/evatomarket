@@ -1,0 +1,27 @@
+@import "../color";
+@import "../font";
+@import "../mixins";
+.modal-width {
+  width: 1000px;
+}
+.modal {
+  .modal-dialog {
+    max-width: 100%;
+    width: 1000px;
+    .modal-content {
+      background-color: transparent;
+      border: unset;
+      .container_modal-review-product {
+        width: 100%;
+        background-color: white;
+        border-radius: 80px;
+        overflow: hidden;
+        border-radius: 40px;
+        .row {
+      
+        }
+      }
+    }
+  }
+}
+

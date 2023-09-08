@@ -6,7 +6,11 @@ import { listProduct } from "../data/dataProducts";
 import ProductItem from "../modules/ProductItem";
 import TextUnderline from "../components/TextUnderline";
 import { useDispatch } from "react-redux";
+import { open } from "../reducer/modalSlice";
+import { MODAL_NAME } from "../enum";
+import { AppDispatch } from "../store";
 const ProductListHome = () => {
+  const dispatch = useDispatch<AppDispatch>();
   return (
     <>
       <Container as="section" className="container_product_list">
@@ -24,6 +28,14 @@ const ProductListHome = () => {
           {listProduct.slice(0, 8).map((product: IProduct, index: number) => {
             return (
               <ProductItem
+                onViewDetail={(product: IProduct) => {
+                  dispatch(
+                    open({
+                      name: MODAL_NAME.MODAL_REVIEW_PRODUCT,
+                      data: product,
+                    })
+                  );
+                }}
                 key={`${product.title}_${index}`}
                 productInfo={product}
               />

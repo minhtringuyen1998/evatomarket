@@ -18,25 +18,6 @@
     object-fit: cover;
     vertical-align: middle;
   }
-  @keyframes rotateSpinner {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  .spinner {
-    display: none;
-      border: 2px solid rgba(255,255,255,0.2);
-      border-top: 2px solid #767676;
-      min-width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      animation-name: rotateSpinner  ;
-      animation-timing-function:linear;
-      animation-duration: .5s;
-      animation-iteration-count: infinite;
-  }
+
 
 }
